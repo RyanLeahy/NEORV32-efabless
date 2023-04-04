@@ -82,7 +82,37 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+neorv32_verilog_wrapper mprj (
+`ifdef USE_POWER_PINS
+	.vccd1(vccd1),	// User area 1 1.8V power
+	.vssd1(vssd1),	// User area 1 digital ground
+`endif
+
+    .clk_i(wb_clk_i),
+    .rstn_i(wb_rst_i),
+
+    //Wishbone interface
+    .wb_cyc_o(wbs_cyc_i),
+    .wb_stb_o(wbs_stb_i),
+    .wb_we_o(wbs_we_i),
+    .wb_sel_o(wbs_sel_i),
+    .wb_adr_o(wbs_adr_i),
+    .wb_dat_o(wbs_dat_i),
+    .wb_dat_i(wbs_dat_o),
+    .wb_ack_i(wbs_ack_o),
+
+    //UART connected to IO Pads
+    .uart0_rxd_i(io_in[5]),
+    .uart0_txd_o(io_out[6])
+);
+
+endmodule
+
+/*--------------------------------------*/
+/* Example project used as a template   */
+/*--------------------------------------*/
+
+/*user_proj_example mprj (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground
@@ -118,6 +148,6 @@ user_proj_example mprj (
     .irq(user_irq)
 );
 
-endmodule	// user_project_wrapper
+endmodule	// user_project_wrapper*/
 
 `default_nettype wire
