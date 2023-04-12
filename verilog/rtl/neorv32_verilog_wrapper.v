@@ -26086,7 +26086,7 @@ module neorv32_cpu_control_32_2_0_4_0_40_8cd82fcc1d144656bad81224642c94d0248852b
   assign n8697_o = {n8696_o, n8694_o, n8692_o, n8690_o, n8688_o, n8686_o, n8684_o, n8682_o, n8680_o, n8678_o, n8676_o, n8674_o, n8672_o, n8670_o, n8668_o, n8666_o, n8664_o, n8662_o, n8660_o, n8658_o, n8656_o, n8654_o, n8652_o, n8650_o, n8648_o, n8646_o, n8644_o, n8642_o, n8640_o, n8638_o, n8636_o, n8634_o};
 endmodule
 
-module neorv32_sysinfo_100000000_0_16384_8192_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c
+module neorv32_sysinfo_100000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c
   (input  clk_i,
    input  [31:0] addr_i,
    input  rden_i,
@@ -26171,9 +26171,9 @@ module neorv32_sysinfo_100000000_0_16384_8192_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:178:98  */
   assign n2709_o = 1'b0 ? 4'b0010 : 4'b0000;
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:189:71  */
-  assign n2717_o = 1'b1 ? 32'b00000000000000000100000000000000 : 32'b00000000000000000000000000000000;
+  assign n2717_o = 1'b1 ? 32'b00000000000000000000010000000000 : 32'b00000000000000000000000000000000;
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:192:71  */
-  assign n2721_o = 1'b1 ? 32'b00000000000000000010000000000000 : 32'b00000000000000000000000000000000;
+  assign n2721_o = 1'b1 ? 32'b00000000000000000000100000000000 : 32'b00000000000000000000000000000000;
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:204:27  */
   assign n2727_o = 3'b111 - addr;
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:203:7  */
@@ -27656,7 +27656,7 @@ module neorv32_mtime
     n2095_q <= n2067_o;
 endmodule
 
-module neorv32_wishbone_16384_8192_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7
+module neorv32_wishbone_1024_2048_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7
   (input  clk_i,
    input  rstn_i,
    input  src_i,
@@ -27696,11 +27696,11 @@ module neorv32_wishbone_16384_8192_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7
   wire [3:0] end_byteen;
   wire ack_gated;
   wire [31:0] rdata_gated;
-  wire [17:0] n1725_o;
+  wire [21:0] n1725_o;
   wire n1728_o;
   wire n1730_o;
   wire n1731_o;
-  wire [18:0] n1735_o;
+  wire [20:0] n1735_o;
   wire n1738_o;
   wire n1740_o;
   wire n1741_o;
@@ -27877,17 +27877,17 @@ module neorv32_wishbone_16384_8192_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:143:10  */
   assign rdata_gated = n1904_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:166:35  */
-  assign n1725_o = addr_i[31:14];
+  assign n1725_o = addr_i[31:10];
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:166:79  */
-  assign n1728_o = n1725_o == 18'b000000000000000000;
+  assign n1728_o = n1725_o == 22'b0000000000000000000000;
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:166:137  */
   assign n1730_o = n1728_o & 1'b1;
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:166:23  */
   assign n1731_o = n1730_o ? 1'b1 : 1'b0;
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:167:35  */
-  assign n1735_o = addr_i[31:13];
+  assign n1735_o = addr_i[31:11];
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:167:79  */
-  assign n1738_o = n1735_o == 19'b1000000000000000000;
+  assign n1738_o = n1735_o == 21'b100000000000000000000;
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:167:137  */
   assign n1740_o = n1738_o & 1'b1;
   /* ../neorv32/rtl/core/neorv32_wishbone.vhd:167:23  */
@@ -29242,7 +29242,7 @@ module neorv32_boot_rom_8aaa057a3ce108fd664b4f820549d0c7a5c85d77
   /* ../neorv32/rtl/core/neorv32_boot_rom.vhd:98:5  */
 endmodule
 
-module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
+module neorv32_dmem_2048_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   (input  clk_i,
    input  rden_i,
    input  wren_i,
@@ -29254,16 +29254,16 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   wire acc_en;
   wire [31:0] rdata;
   wire rden;
-  wire [10:0] addr;
-  wire [10:0] addr_ff;
+  wire [8:0] addr;
+  wire [8:0] addr_ff;
   wire [7:0] mem_ram_b0_rd;
   wire [7:0] mem_ram_b1_rd;
   wire [7:0] mem_ram_b2_rd;
   wire [7:0] mem_ram_b3_rd;
-  wire [18:0] n1566_o;
+  wire [20:0] n1566_o;
   wire n1568_o;
   wire n1569_o;
-  wire [10:0] n1572_o;
+  wire [8:0] n1572_o;
   wire n1575_o;
   wire n1576_o;
   wire [7:0] n1581_o;
@@ -29288,7 +29288,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   wire [31:0] n1651_o;
   wire [31:0] n1652_o;
   reg n1654_q;
-  reg [10:0] n1655_q;
+  reg [8:0] n1655_q;
   reg n1664_q;
   wire [7:0] n1665_data; // mem_rd
   wire [7:0] n1667_data; // mem_rd
@@ -29315,13 +29315,13 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:67:55  */
   assign mem_ram_b3_rd = n1671_data; // (signal)
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:83:29  */
-  assign n1566_o = addr_i[31:13];
+  assign n1566_o = addr_i[31:11];
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:83:56  */
-  assign n1568_o = n1566_o == 19'b1000000000000000000;
+  assign n1568_o = n1566_o == 21'b100000000000000000000;
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:83:17  */
   assign n1569_o = n1568_o ? 1'b1 : 1'b0;
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:84:19  */
-  assign n1572_o = addr_i[12:2];
+  assign n1572_o = addr_i[10:2];
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:94:37  */
   assign n1575_o = ben_i[0];
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:94:27  */
@@ -29378,7 +29378,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   always @(posedge clk_i)
     n1664_q <= n1645_o;
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:111:31  */
-  reg [7:0] mem_ram_b0[2047:0] ; // memory
+  reg [7:0] mem_ram_b0[511:0] ; // memory
   assign n1665_data = mem_ram_b0[addr_ff];
   always @(posedge clk_i)
     if (n1611_o)
@@ -29386,7 +29386,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:111:31  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:95:22  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:112:31  */
-  reg [7:0] mem_ram_b1[2047:0] ; // memory
+  reg [7:0] mem_ram_b1[511:0] ; // memory
   assign n1667_data = mem_ram_b1[addr_ff];
   always @(posedge clk_i)
     if (n1612_o)
@@ -29394,7 +29394,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:112:31  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:98:22  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:113:31  */
-  reg [7:0] mem_ram_b2[2047:0] ; // memory
+  reg [7:0] mem_ram_b2[511:0] ; // memory
   assign n1669_data = mem_ram_b2[addr_ff];
   always @(posedge clk_i)
     if (n1613_o)
@@ -29402,7 +29402,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:113:31  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:101:22  */
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:114:31  */
-  reg [7:0] mem_ram_b3[2047:0] ; // memory
+  reg [7:0] mem_ram_b3[511:0] ; // memory
   assign n1671_data = mem_ram_b3[addr_ff];
   always @(posedge clk_i)
     if (n1614_o)
@@ -29411,7 +29411,7 @@ module neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39
   /* ../neorv32/rtl/core/mem/neorv32_dmem.legacy.vhd:104:22  */
 endmodule
 
-module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
+module neorv32_imem_1024_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   (input  clk_i,
    input  rden_i,
    input  wren_i,
@@ -29424,16 +29424,16 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   wire acc_en;
   wire [31:0] rdata;
   wire rden;
-  wire [11:0] addr;
-  wire [11:0] addr_ff;
+  wire [7:0] addr;
+  wire [7:0] addr_ff;
   wire [7:0] mem_b0_rd;
   wire [7:0] mem_b1_rd;
   wire [7:0] mem_b2_rd;
   wire [7:0] mem_b3_rd;
-  wire [17:0] n1452_o;
+  wire [21:0] n1452_o;
   wire n1454_o;
   wire n1455_o;
-  wire [11:0] n1458_o;
+  wire [7:0] n1458_o;
   wire n1461_o;
   wire n1462_o;
   wire [7:0] n1467_o;
@@ -29458,7 +29458,7 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   wire n1534_o;
   wire [31:0] n1540_o;
   reg n1542_q;
-  reg [11:0] n1543_q;
+  reg [7:0] n1543_q;
   reg n1553_q;
   reg n1554_q;
   wire [7:0] n1555_data; // mem_rd
@@ -29487,13 +29487,13 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:84:43  */
   assign mem_b3_rd = n1561_data; // (signal)
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:108:29  */
-  assign n1452_o = addr_i[31:14];
+  assign n1452_o = addr_i[31:10];
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:108:56  */
-  assign n1454_o = n1452_o == 18'b000000000000000000;
+  assign n1454_o = n1452_o == 22'b0000000000000000000000;
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:108:17  */
   assign n1455_o = n1454_o ? 1'b1 : 1'b0;
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:109:19  */
-  assign n1458_o = addr_i[13:2];
+  assign n1458_o = addr_i[9:2];
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:138:39  */
   assign n1461_o = ben_i[0];
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:138:29  */
@@ -29553,7 +29553,7 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   always @(posedge clk_i)
     n1554_q <= 1'b0;
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:154:29  */
-  reg [7:0] mem_ram_b0[4095:0] ; // memory
+  reg [7:0] mem_ram_b0[255:0] ; // memory
   assign n1555_data = mem_ram_b0[addr_ff];
   always @(posedge clk_i)
     if (n1497_o)
@@ -29561,7 +29561,7 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:154:29  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:139:24  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:155:29  */
-  reg [7:0] mem_ram_b1[4095:0] ; // memory
+  reg [7:0] mem_ram_b1[255:0] ; // memory
   assign n1557_data = mem_ram_b1[addr_ff];
   always @(posedge clk_i)
     if (n1498_o)
@@ -29569,7 +29569,7 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:155:29  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:142:24  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:156:29  */
-  reg [7:0] mem_ram_b2[4095:0] ; // memory
+  reg [7:0] mem_ram_b2[255:0] ; // memory
   assign n1559_data = mem_ram_b2[addr_ff];
   always @(posedge clk_i)
     if (n1499_o)
@@ -29577,7 +29577,7 @@ module neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:156:29  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:145:24  */
   /* ../neorv32/rtl/core/mem/neorv32_imem.legacy.vhd:157:29  */
-  reg [7:0] mem_ram_b3[4095:0] ; // memory
+  reg [7:0] mem_ram_b3[255:0] ; // memory
   assign n1561_data = mem_ram_b3[addr_ff];
   always @(posedge clk_i)
     if (n1500_o)
@@ -31011,7 +31011,7 @@ module neorv32_cpu_1_0_4_0_40_8cd82fcc1d144656bad81224642c94d0248852b6
   assign n1093_o = ctrl[69];
 endmodule
 
-module neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3
+module neorv32_top_100000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3
   (input  clk_i,
    input  rstn_i,
    input  jtag_trst_i,
@@ -32605,7 +32605,7 @@ module neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1
   /* ../neorv32/rtl/core/neorv32_top.vhd:837:17  */
   assign neorv32_int_imem_inst_true_neorv32_int_imem_inst_n669 = neorv32_int_imem_inst_true_neorv32_int_imem_inst_err_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_top.vhd:822:5  */
-  neorv32_imem_16384_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3 neorv32_int_imem_inst_true_neorv32_int_imem_inst (
+  neorv32_imem_1024_91a7f356ca6ce41b6122bd41e60c1f2eb8f0f0e3 neorv32_int_imem_inst_true_neorv32_int_imem_inst (
     .clk_i(clk_i),
     .rden_i(n662_o),
     .wren_i(n663_o),
@@ -32630,7 +32630,7 @@ module neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1
   /* ../neorv32/rtl/core/neorv32_top.vhd:864:17  */
   assign neorv32_int_dmem_inst_true_neorv32_int_dmem_inst_n682 = neorv32_int_dmem_inst_true_neorv32_int_dmem_inst_ack_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_top.vhd:851:5  */
-  neorv32_dmem_8192_34d7de1b571aa545cf571b84dc4b40d1f42fed39 neorv32_int_dmem_inst_true_neorv32_int_dmem_inst (
+  neorv32_dmem_2048_34d7de1b571aa545cf571b84dc4b40d1f42fed39 neorv32_int_dmem_inst_true_neorv32_int_dmem_inst (
     .clk_i(clk_i),
     .rden_i(n676_o),
     .wren_i(n677_o),
@@ -32699,7 +32699,7 @@ module neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1
   /* ../neorv32/rtl/core/neorv32_top.vhd:947:21  */
   assign neorv32_wishbone_inst_true_neorv32_wishbone_inst_n718 = neorv32_wishbone_inst_true_neorv32_wishbone_inst_wb_cyc_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_top.vhd:904:5  */
-  neorv32_wishbone_16384_8192_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7 neorv32_wishbone_inst_true_neorv32_wishbone_inst (
+  neorv32_wishbone_1024_2048_255_faf1cd4bdf2d59261beed066baf3c3e69ee5d9f7 neorv32_wishbone_inst_true_neorv32_wishbone_inst (
     .clk_i(clk_i),
     .rstn_i(rstn_int),
     .src_i(n700_o),
@@ -32822,7 +32822,7 @@ module neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1
   /* ../neorv32/rtl/core/neorv32_top.vhd:1661:15  */
   assign neorv32_sysinfo_inst_n849 = neorv32_sysinfo_inst_err_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_top.vhd:1607:3  */
-  neorv32_sysinfo_100000000_0_16384_8192_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c neorv32_sysinfo_inst (
+  neorv32_sysinfo_100000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c neorv32_sysinfo_inst (
     .clk_i(clk_i),
     .addr_i(n846_o),
     .rden_i(io_rden),
@@ -32969,7 +32969,7 @@ module neorv32_verilog_wrapper
   /* ./neorv32_verilog_wrapper.vhd:60:20  */
   assign neorv32_top_inst_n28 = neorv32_top_inst_uart0_txd_o; // (signal)
   /* ./neorv32_verilog_wrapper.vhd:31:3  */
-  neorv32_top_100000000_1_0_4_0_40_16384_8192_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3 neorv32_top_inst (
+  neorv32_top_100000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3 neorv32_top_inst (
     .clk_i(clk_i),
     .rstn_i(rstn_i),
     .jtag_trst_i(n7_o),
