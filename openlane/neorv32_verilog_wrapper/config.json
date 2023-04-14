@@ -5,7 +5,7 @@
         "dir::../../verilog/rtl/defines.v",
         "dir::../../verilog/rtl/neorv32_verilog_wrapper.v"
     ],
-    "CLOCK_PERIOD": 25,
+    "CLOCK_PERIOD": 200,
     "CLOCK_PORT": "clk_i",
     "CLOCK_NET": "neorv32_verilog_wrapper.clk_i",
     "FP_SIZING": "absolute",
@@ -36,20 +36,20 @@
         "FP_CORE_UTIL": 20,
         "RT_MAX_LAYER": "met4",
         "scl::sky130_fd_sc_hd": {
-            "CLOCK_PERIOD": 25
+            "CLOCK_PERIOD": 200
         },
         "scl::sky130_fd_sc_hdll": {
-            "CLOCK_PERIOD": 10
+            "CLOCK_PERIOD": 200
         },
         "scl::sky130_fd_sc_hs": {
-            "CLOCK_PERIOD": 8
+            "CLOCK_PERIOD": 200
         },
         "scl::sky130_fd_sc_ls": {
-            "CLOCK_PERIOD": 10,
+            "CLOCK_PERIOD": 200,
             "SYNTH_MAX_FANOUT": 5
         },
         "scl::sky130_fd_sc_ms": {
-            "CLOCK_PERIOD": 10
+            "CLOCK_PERIOD": 200
         }
     },
     "pdk::gf180mcuC": {

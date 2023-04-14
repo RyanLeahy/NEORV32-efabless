@@ -26086,7 +26086,7 @@ module neorv32_cpu_control_32_2_0_4_0_40_8cd82fcc1d144656bad81224642c94d0248852b
   assign n8697_o = {n8696_o, n8694_o, n8692_o, n8690_o, n8688_o, n8686_o, n8684_o, n8682_o, n8680_o, n8678_o, n8676_o, n8674_o, n8672_o, n8670_o, n8668_o, n8666_o, n8664_o, n8662_o, n8660_o, n8658_o, n8656_o, n8654_o, n8652_o, n8650_o, n8648_o, n8646_o, n8644_o, n8642_o, n8640_o, n8638_o, n8636_o, n8634_o};
 endmodule
 
-module neorv32_sysinfo_100000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c
+module neorv32_sysinfo_5000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c
   (input  clk_i,
    input  [31:0] addr_i,
    input  rden_i,
@@ -26178,7 +26178,7 @@ module neorv32_sysinfo_100000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa7
   assign n2727_o = 3'b111 - addr;
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:203:7  */
   assign n2731_o = rden ? n2754_o : 32'b00000000000000000000000000000000;
-  assign n2737_o = {32'b00000101111101011110000100000000, 32'b00000000000000000000000000000000, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 6'b000000, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 4'b0000, 4'b0000, n2709_o, n2704_o, n2699_o, n2695_o, n2690_o, n2685_o, 32'b00000000000000000000000000000000, 32'b10000000000000000000000000000000, n2717_o, n2721_o};
+  assign n2737_o = {32'b00000000010011000100101101000000, 32'b00000000000000000000000000000000, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 6'b000000, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 4'b0000, 4'b0000, n2709_o, n2704_o, n2699_o, n2695_o, n2690_o, n2685_o, 32'b00000000000000000000000000000000, 32'b10000000000000000000000000000000, n2717_o, n2721_o};
   /* ../neorv32/rtl/core/neorv32_sysinfo.vhd:199:5  */
   always @(posedge clk_i)
     n2738_q <= n2731_o;
@@ -31011,7 +31011,7 @@ module neorv32_cpu_1_0_4_0_40_8cd82fcc1d144656bad81224642c94d0248852b6
   assign n1093_o = ctrl[69];
 endmodule
 
-module neorv32_top_100000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3
+module neorv32_top_5000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3
   (input  clk_i,
    input  rstn_i,
    input  jtag_trst_i,
@@ -32822,7 +32822,7 @@ module neorv32_top_100000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_
   /* ../neorv32/rtl/core/neorv32_top.vhd:1661:15  */
   assign neorv32_sysinfo_inst_n849 = neorv32_sysinfo_inst_err_o; // (signal)
   /* ../neorv32/rtl/core/neorv32_top.vhd:1607:3  */
-  neorv32_sysinfo_100000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c neorv32_sysinfo_inst (
+  neorv32_sysinfo_5000000_0_1024_2048_4_64_1_4_64_0_0_0_c00c06f0c8f7e7aa711090f9c2d219a9079d700c neorv32_sysinfo_inst (
     .clk_i(clk_i),
     .addr_i(n846_o),
     .rden_i(io_rden),
@@ -32969,7 +32969,7 @@ module neorv32_verilog_wrapper
   /* ./neorv32_verilog_wrapper.vhd:60:20  */
   assign neorv32_top_inst_n28 = neorv32_top_inst_uart0_txd_o; // (signal)
   /* ./neorv32_verilog_wrapper.vhd:31:3  */
-  neorv32_top_100000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3 neorv32_top_inst (
+  neorv32_top_5000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_1_0_0_1_32_32_1_69ad7886168de6916fb842204ba7129434750df3 neorv32_top_inst (
     .clk_i(clk_i),
     .rstn_i(rstn_i),
     .jtag_trst_i(n7_o),
