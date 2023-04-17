@@ -32878,7 +32878,12 @@ module neorv32_top_5000000_1_0_4_0_40_1024_2048_4_64_1_4_64_255_0_0_256_256_1_1_
 endmodule
 
 module neorv32_verilog_wrapper
-  (input  clk_i,
+  (
+`ifdef USE_POWER_PINS
+   inout vccd1,	// User area 1 1.8V supply
+   inout vssd1,	// User area 1 digital ground
+`endif 
+   input  clk_i,
    input  rstn_i,
    input  uart0_rxd_i,
    input  [31:0] wb_dat_i,
